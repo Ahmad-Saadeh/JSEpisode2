@@ -18,7 +18,24 @@
 *       pairs() returns []
 ****************************************************************/
 function pairs(names) {
-  // Your code goes here
+  let Main_list = [];
+  let Partial_list = [];
+  let counter = 0;
+if (names){
+  names.sort(()=>Math.random()-0.5);
+    for (let index=0 ;index<names.length;index++){
+      Partial_list.push(names[index])
+      counter++;
+      if ((counter==2) || index==(names.length-1)){
+        Main_list.push(Partial_list);
+        Partial_list = [];
+        counter = 0;
+      }
+  }
+  return Main_list;
+}
+else
+return Main_list;
 }
 
 module.exports = pairs;
